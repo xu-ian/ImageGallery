@@ -1,0 +1,16 @@
+simple image share
+
+user
+POST /signup
+POST /login
+POST /logout
+
+images
+POST /:user/images
+PUT /:user/images/:name
+GET /:user/images/:name
+GET /:user/images
+DELETE /:user/images/:name
+
+imagefile
+GET /imagefile/:name
