@@ -58,7 +58,7 @@ func isAlphanumeric(str string) bool {
 }
 
 func isFileLink(str string) bool {
-	return regexp.MustCompile(`^([a-zA-Z0-9_\-.:\/]+)$`).MatchString(str)
+	return regexp.MustCompile(`^([a-zA-Z0-9_\-.:%#\/]+)$`).MatchString(str)
 }
 
 // Used to generate a random salt
