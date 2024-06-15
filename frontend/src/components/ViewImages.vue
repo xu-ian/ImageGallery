@@ -34,16 +34,16 @@ export default {
 </script>
 
 <template>
-  <form class="card" @submit.prevent="submit">
-    <div class="form-floating my-2">
+  <form class="card m-2" @submit.prevent="submit">
+    <div class="form-floating m-2">
       <input id="user" class="form-control" v-model="user" type="text" placeholder="example_username">
       <label for="user">Name of User</label>
     </div>
     <div class="my-2">
-      <button type="submit">Search</button>
+      <button class="btn btn-primary" type="submit">Search</button>
     </div>
   </form>
-  <div class="card">
+  <div class="card m-2">
     <div v-if="images[0].length == 0">No Images</div>
     <div v-for="imagerow in images" :key="imagerow" class="row">
       <template v-for="image in imagerow" :key="image">

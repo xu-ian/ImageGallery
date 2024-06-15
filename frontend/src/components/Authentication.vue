@@ -71,7 +71,7 @@ export default {
 </script>
 
 <template>
-  <div class="card text-center">
+  <div class="card text-center m-2">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li v-if="state != 2" class="nav-item">
@@ -88,34 +88,34 @@ export default {
   <form v-if="state==0" class="card-body" @submit.prevent="signup">
     <div v-if="errorMessage != ''" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
     <div class="my-2">
-      <label for="username">Enter your username</label>
-      <input v-model="username" id="username" type="text" />
+      <label class="m-2" for="username">Enter your username: </label>
+      <input class="m-2" v-model="username" id="username" type="text" />
     </div>
     <div class="my-2">
-      <label for="password">Enter your password</label>
-      <input v-model="password" id="password" type="password" />
+      <label class="m-2" for="password">Enter your password: </label>
+      <input v-model="password" class="m-2" id="password" type="password" />
     </div>
     <div class="my-2">
-      <button type="submit">Sign up</button>
+      <button class="btn btn-primary" type="submit">Sign up</button>
     </div>
   </form>
   <form v-else-if="state==1" class="card-body" @submit.prevent="login">
     <div v-if="errorMessage != ''" class="alert alert-danger" role="alert">{{ errorMessage }}</div>
     <div class="my-2">
-      <label for="username">Enter your username</label>
-      <input v-model="username" id="username" type="text" />
+      <label class="m-2" for="username">Enter your username: </label>
+      <input class="m-2" v-model="username" id="username" type="text" />
     </div>
     <div class="my-2">
-      <label for="password">Enter your password</label>
-      <input v-model="password" id="password" type="password" />
+      <label class="m-2" for="password">Enter your password: </label>
+      <input class="m-2" v-model="password" id="password" type="password" />
     </div>
     <div class="my-2">
-      <button type="submit">Log in</button>
+      <button class="btn btn-primary" type="submit">Log in</button>
     </div>
   </form>
   <form v-else class="card-body" @submit.prevent="signout">
     <div class="my-2">
-      <button type="submit">Log out</button>
+      <button class="btn btn-primary" type="submit">Log out</button>
     </div>
   </form>
 </div>

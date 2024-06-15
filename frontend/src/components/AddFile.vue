@@ -69,28 +69,28 @@ export default {
 </script>
 
 <template>
-  <form class="card" @submit.prevent="submit">
+  <form class="card m-2" @submit.prevent="submit">
     <div class="my-2">
       <select @input="type = $event.target.value">
         <option>Link</option>
         <option>File</option>
       </select>
     </div>
-    <div class="my-2">
+    <div class="m-2">
       <input v-if="type==='File'" class="form-control" @change="setFile" type="file" accept="image/png, image/jpeg"/>
       <input v-else type="text" id="text-input" class="form-control" :value="link" @input="setLink" placeholder="paste link to image here"/>
       <label for="text-input"></label>
     </div>
     <div class="my-2">
-      <button type="submit" @click="sendFile($event)">Add image</button>
+      <button class="btn btn-primary" type="submit" @click="sendFile($event)">Add image</button>
     </div>
   </form>
-  <div class="card">
+  <div class="card m-2">
     <div v-for="imagerow in images" :key="imagerow" class="row mx-2">
       <template v-for="image in imagerow" :key="image">
           <div class="vstack border" style="max-width:25%">
             <img :id="image.id" :src="image.filepath" :alt="image.filename"/>
-            <button id="removeImage" @click="removeImage(image.id)">Remove Image</button>
+            <button class="btn btn-danger my-1" id="removeImage" @click="removeImage(image.id)">Remove Image</button>
           </div>
       </template>
     </div>

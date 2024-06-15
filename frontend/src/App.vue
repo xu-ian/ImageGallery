@@ -17,7 +17,6 @@
     </ul>
   </nav>
   <main>
-    <img alt="Vue logo" src="./assets/logo.png">
     <RouterView />
   </main>
 </template>
