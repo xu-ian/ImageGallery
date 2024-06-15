@@ -1,12 +1,12 @@
 # Image Gallery
 
-Web Application that hosts a simple image gallery on your computer. Built with Vue.js as frontend with bootstrap and Sass to handle CSS. Golang for backend with a SQL database to store data.
+Web Application that hosts a simple image gallery on your computer. Built with Vue.js as frontend with bootstrap and Sass to handle CSS. Golang for backend with a MySQL database to store data.
 
 # Running and compiling
 
 ## Setting up the database
 
-- Start your a SQL environment
+- Start your MySQL environment
 - Run the SchemaSetup.sql file to setup the database
 
 ## Starting the backend
@@ -18,4 +18,4 @@ Web Application that hosts a simple image gallery on your computer. Built with V
 
 - Navigate to the frontend folder ```cd ./frontend```
 - Run ```npm install``` to add the necessary libraries
-- Run ```npm run build``` to start the frontend server
+- Run ```npm run serve``` to start the frontend server

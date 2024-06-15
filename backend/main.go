@@ -48,8 +48,8 @@ type Imglink struct {
 
 // Sign in info structure for login, signup, logout
 type SigninInfo struct {
-	Username string
-	Password string
+	Username string `json:"username"`
+	Password string `json:"password"`
 }
 
 // Regex for detecting if a string is alphanumeric
@@ -95,7 +95,6 @@ func CORSMiddleware() gin.HandlerFunc {
 func signup(c *gin.Context) {
 	var signup SigninInfo
 	var existingUsername int
-
 	//Check if you can retrieve the username and password
 	if err := c.BindJSON(&signup); err != nil {
 		c.JSON(http.StatusBadRequest, err)
@@ -394,9 +393,8 @@ func main() {
 		Addr:   "127.0.0.1:3306",
 		DBName: "imageshare",
 	}
-
-	db, err := sql.Open("mysql", cfg.FormatDSN())
-
+	var err error
+	db, err = sql.Open("mysql", cfg.FormatDSN())
 	if err != nil {
 		log.Fatal(err)
 		os.Exit(1)
